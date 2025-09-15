@@ -23,6 +23,7 @@ jobs:
           xcodebuild -project HIDApproveSDKWrapper.xcodeproj \
                  -scheme HIDApproveSDKWrapper \
                  -configuration Debug \
+                 -destination "generic/platform=iOS" \
                  clean build \
                  CODE_SIGNING_ALLOWED=NO
       - name: SonarQube Scan
