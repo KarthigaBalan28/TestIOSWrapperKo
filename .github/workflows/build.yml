@@ -19,10 +19,11 @@ jobs:
         uses: SonarSource/sonarqube-scan-action/install-build-wrapper@v5
       - name: Run Build Wrapper
         run: |
-          build-wrapper-macosx-x86 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} xcodebuild -workspace HIDApproveSDKWrapper.xcworkspace \
-           -scheme HIDApproveSDKWrapper \
-           -configuration Debug \
-           clean build
+          build-wrapper-macosx-x86 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} \
+          xcodebuild -project HIDApproveSDKWrapper/HIDApproveSDKWrapper.xcodeproj \
+                 -scheme HIDApproveSDKWrapper \
+                 -configuration Debug \
+                 clean build
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
