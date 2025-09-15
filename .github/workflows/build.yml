@@ -23,7 +23,8 @@ jobs:
           xcodebuild -project HIDApproveSDKWrapper.xcodeproj \
                  -scheme HIDApproveSDKWrapper \
                  -configuration Debug \
-                 clean build
+                 clean build \
+                 CODE_SIGNING_ALLOWED=NO
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
