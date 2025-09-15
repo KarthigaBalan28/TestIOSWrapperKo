@@ -1,0 +1,7 @@
+framework module HID_Approve_SDK {
+
+  umbrella header "HIDSDKBase.h"
+  
+ export *
+ module * { export * }
+}
