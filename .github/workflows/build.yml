@@ -25,6 +25,8 @@ jobs:
                  -configuration Debug \
                  -destination "generic/platform=iOS" \
                  CODE_SIGNING_ALLOWED=NO clean build
+      - name: List build wrapper output
+        run: s -l ${{ env.BUILD_WRAPPER_OUT_DIR }} 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
