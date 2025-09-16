@@ -10,7 +10,7 @@ jobs:
     name: Build and analyze
     runs-on: macos-latest
     env:
-      BUILD_WRAPPER_OUT_DIR: ${{ github.workspace }}
+      BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory
     steps:
       - uses: actions/checkout@v4
         with:
