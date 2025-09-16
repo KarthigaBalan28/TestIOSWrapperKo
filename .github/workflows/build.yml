@@ -24,7 +24,7 @@ jobs:
                  -scheme HIDApproveSDKWrapper \
                  -configuration Debug \
                  -destination "generic/platform=iOS" \
-                 clean build \
+                 clean build | xcpretty --report json-compilation-database --output compile_commands.json\
                  CODE_SIGNING_ALLOWED=NO
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
